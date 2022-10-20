@@ -35,7 +35,7 @@ export async function getStaticPaths() {
       params: { page_index: i.toString() },
     });
   }
-  console.log(paths);
+
   return {
     paths,
     fallback: false,
