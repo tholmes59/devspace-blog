@@ -13,11 +13,11 @@ import { getPosts } from "@/lib/post";
 export default function BlogPage({ posts, numPages, currentPage, categories }) {
   return (
     <Layout>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap sm:flex-nowrap justify-between">
         <div className="w-3/4 mr-10">
           <h1 className="text-5xl border-b-4 p-5">Blog</h1>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5">
             {posts.map((post, index) => (
               <Post key={index} post={post} />
             ))}
@@ -25,7 +25,7 @@ export default function BlogPage({ posts, numPages, currentPage, categories }) {
 
           <Pagination currentPage={currentPage} numPages={numPages} />
         </div>
-        <div className="w-1/4">
+        <div className="w-3/4 sm:w-1/4">
           <CategoryList categories={categories} />
         </div>
       </div>
